@@ -15,9 +15,12 @@ const main = async() => {
         //Se almacena el valor de la promesa recibida de esta función en la variable opt
        opt = await inquirerMenu();
 
+       //Se valida la variable opt y según la opción escojida se realizarn las siguientes opciones
        switch (opt) {
         case '1':
+            //Se guarda en la variable desc el resultado de la función leerInput
             const desc = await leerInput('Descripcion:');
+            //Se crea una tarea enviando el desc (descrición de la tarea) en la función creartarea
             tareas.crearTarea( desc );
         break;
 

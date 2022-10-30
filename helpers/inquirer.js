@@ -2,6 +2,13 @@ import inquirer from 'inquirer';
  
 import colors from 'colors';
  
+//Se crea un arreglo de la lista a mostrar en el inquirer
+//type es el tipo de dato a mostrar, en este caso es una lista
+//name es solo un nombre de o un identificado de la lista
+//message es el mensaje que se muestra al inicio de la lista 
+//choice es la lista que el usuario debe escojer 
+  //value es  el valor que retorna al escojer la opción
+  //name es la opción mostrada en la consola para que el usuario pueda escojer
 const menuOpts = [
   {
     type: 'list',
@@ -40,14 +47,17 @@ const menuOpts = [
   },
 ];
  
+//Se crea función flecha en donde se muestra el menu de opciones, notece que se usa async el cual es esta función se convierte en una promesa 
 const inquirerMenu = async () => {
   console.clear();
   console.log('==========================='.green);
   console.log('   Seleccione una opción'.green);
   console.log('===========================\n'.green);
  
+  //se almacena el resulado del vaule en la variable opción
   const { opcion } = await inquirer.prompt(menuOpts);
  
+  //al ser una función promesa se debe enviar como retorno el resultado obtenido
   return opcion;
 };
 
