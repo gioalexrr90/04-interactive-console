@@ -1,6 +1,6 @@
-const colors = require('colors');
-
-const { mostrarMenu, pausa } = require('./helpers/mensajes');
+import colors from 'colors';
+import { inquirerMenu, pausa, leerInput } from './helpers/inquirer.js';
+import { Tareas } from './helpers/models/tareas.js';
 
 console.clear();
 
@@ -8,15 +8,25 @@ console.clear();
 const main = async() => {
 
     let opt = '';
+    const tareas = new Tareas();
 
     do {
 
         //Se almacena el valor de la promesa recibida de esta función en la variable opt
-       opt = await mostrarMenu();
-       console.log({opt});
+       opt = await inquirerMenu();
 
-       //Se valida no hay respuesta en la promesa programada en la función mostrarMenu(), entonces se genera una pausa
-       if(opt !== '0') await pausa();
+       switch (opt) {
+        case '1':
+            const desc = await leerInput('Descripcion:');
+            tareas.crearTarea( desc );
+        break;
+
+        case '2':
+            console.log(tareas._listado);
+        break;
+       }
+
+       await pausa();
 
     } while (opt !== '0');
     
