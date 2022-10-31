@@ -17,31 +17,31 @@ const menuOpts = [
     choices: [
       {
         value: '1',
-        name: '1. Crear tarea',
+        name: `${ '1.'.magenta } Crear tarea`,
       },
       {
         value: '2',
-        name: '2. Listar tarea',
+        name: `${ '2.'.magenta } Listar tarea`,
       },
       {
         value: '3',
-        name: '3. Listar tarea completadas',
+        name: `${ '3.'.magenta } Listar tarea completadas`,
       },
       {
         value: '4',
-        name: '4. Listar tareas pendienes',
+        name: `${ '4.'.magenta } Listar tareas pendienes`,
       },
       {
         value: '5',
-        name: '5. Completar tarea(s)',
+        name: `${ '5.'.magenta } Completar tarea(s)`,
       },
       {
         value: '6',
-        name: '6. Borrar tarea',
+        name: `${ '6.'.magenta } Borrar tarea`,
       },
       {
         value: '0',
-        name: '0. Salir',
+        name: `${ '0.'.magenta } Salir`,
       },
     ],
   },
